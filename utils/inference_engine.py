@@ -101,7 +101,7 @@ class InferenceEngineFuriosa(InferenceEngine):
         else:
             compile_config = None
 
-        self.sess = session.create(str(onnx_i8_file), device=device, compile_config=compile_config)
+        self.sess = session.create(str(onnx_i8_file), device=device, compiler_config=compile_config)
 
     def quantize(self, onnx_file, onnx_i8_file, calib_dataset):
         from furiosa.quantizer.frontend.onnx import optimize_model
